@@ -1,0 +1,24 @@
+{
+  "dir": "ltr",
+  "lang": "en",
+  "name": "Frontend Mentor | Todo app",
+  "short_name": "Frontend Mentor",
+  "scope": "/",
+  "display": "browser",
+  "start_url": "index.html",
+  "background_color": "#000000",
+  "theme_color": "transparent",
+  "description": "",
+  "orientation": "any",
+  "related_applications": [],
+  "prefer_related_applications": "false",
+  "icons": [
+    {
+      "src": "./images/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ],
+  "url": "index.html",
+  "screenshots": []
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <title>Frontend Mentor | Todo app</title>
+  <script src="main.js"></script>
+  <link rel="manifest" href="manifest.json"></link>
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    input:focus {
+      outline: none;
+    }
+  </style>
+</head>
+
+<body style="background-color: hsl(0, 0%, 98%);">
+
+  <div class="">
+    <img src="images/bg-desktop-light.jpg" alt="" class="w-full">
+  </div>
+
+  <div class="lg:w-6/12 md:8/12 w-10/12 m-auto relative">
+
+    <div class="flex justify-between lg:-mt-48 md:-mt-36 -mt-12">
+      <h1 class="text-5xl text-white">T O D O</h1>
+      <img src="images/icon-moon.svg" alt="" class="w-10 h-10 mt-2">
+    </div>
+
+    <div class="flex my-10 bg-white items-center rounded-lg shadow-lg">
+      <div class="w-6 h-6 m-4 rounded-full border-black border-solid border-2 hover:border-purple-400">
+        <img src="images/icon-check.svg" alt="" class="mx-auto my-1.5">
+      </div>
+      <input class="my-4 w-full border-0" type="text" placeholder="Create a new Todo..." id="userInput">
+      <button class="ml-auto mr-6 bg-purple-400 px-3 rounded-2xl text-white" onclick="createItem()">Enter</button>
+    </div>
+  </div>
+
+  <div class="lg:w-6/12 md:8/12 w-10/12 m-auto divide-y divide-gray-300 flex flex-col bg-white relative rounded-t-lg shadow-lg" id="main-container">
+
+    <div class="flex items-center item" onmouseover="showCross(this)" onmouseout="hideCross(this)">
+      <div class="w-6 h-6 m-4 rounded-full border-black border-solid border-2 hover:border-purple-400" onclick="taskCompleted(this)">
+        <img src="images/icon-check.svg" alt="" class="mx-auto my-1.5">
+      </div>
+      <h2>Sample task</h2>
+      <img src="images/icon-cross.svg" alt="" class="ml-auto mr-6 hidden" onclick="deleteItem(this)">
+    </div>
+
+  </div>
+
+  <div class="lg:w-6/12 md:8/12 w-10/12 m-auto border-t border-gray-300 flex flex-row bg-white relative rounded-b-lg shadow-lg justify-center">
+
+    <div class="flex md:flex-row flex-col py-4 justify-between w-full">
+
+      <div class="md:mx-2 hover:text-gray-400 text-center" id="itemsLeft" onclick="itemLeft()">Tasks left: 1</div>
+
+      <div class="flex md:flex-row flex-col">
+        <div class="md:mx-2 hover:text-blue-600 text-center">All</div>
+        <div class="md:mx-2 hover:text-blue-600 text-center" onclick="showOnlyActive()">Active</div>
+        <div class="md:mx-2 hover:text-blue-600 text-center">Completed</div>
+      </div>
+
+      <div class="md:mx-2 hover:text-gray-400 text-center">Clear Completed</div>
+    </div>
+
+  </div>
+
+  <div class="lg:w-6/12 md:8/12 w-10/12 m-auto relative mt-16">
+    
+    <h6 class="text-center">Drag and drop to reorder list</h6>
+    
+    <div class="attribution mt-10">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </div>
+
+  </div>
+</body>
+<script type="module">
+import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+
+const el = document.createElement('pwa-update');
+document.body.appendChild(el);
+</script>
+</html>
